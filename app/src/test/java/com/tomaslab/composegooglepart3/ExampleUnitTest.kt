@@ -1,17 +1,17 @@
 package com.tomaslab.composegooglepart3
 
+
+import junit.framework.TestCase.assertEquals
 import org.junit.Test
 
-import org.junit.Assert.*
-
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * See [testing documentation](http://d.android.com/tools/testing).
- */
-class ExampleUnitTest {
+class TipCalculatorTest{
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    fun calculate_20_percent_tip_no_roundup(){
+        val amount = 10.0
+        val tipPercent = 20.00
+        val expectedTip = "2,00 ₽"
+        val actualTip = calculateTip(amount = amount,tipPercent = tipPercent, roundUp = false)
+        assertEquals(expectedTip,actualTip)
     }
+
 }
